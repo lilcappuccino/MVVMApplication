@@ -13,6 +13,7 @@ open class BaseView: UIView {
     // MARK: Init
       override public init(frame: CGRect) {
           super.init(frame: frame)
+          backgroundColor = .white
           makeUI()
       }
 

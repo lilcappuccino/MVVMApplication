@@ -6,3 +6,21 @@
 //
 
 import Foundation
+import UIKit
+
+final class LoginCoordinator: BaseCoordinator {
+  
+    let window: UIWindow
+    
+    init(window: UIWindow) {
+        self.window = window;
+    }
+    
+    override func start() {
+        let viewModel = LoginViewModel()
+        let vc = LoginViewController(viewModel: viewModel, customView: LoginView())
+        navigationController.viewControllers = [vc]
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+    }
+}

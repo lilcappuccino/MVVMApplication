@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+final class LoginViewController: BaseViewController<LoginViewModelType, LoginView> {
+   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+}
