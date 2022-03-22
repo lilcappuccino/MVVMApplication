@@ -19,18 +19,18 @@ final class LoginViewController: BaseViewController<LoginViewModelType, LoginVie
         
         // input
         customView.emailField.textPublisher
-            .sink(receiveValue: { email in
-                self.viewModel.input.emailPublisher.send(email)
+            .sink(receiveValue: { [weak self] email in
+                self?.viewModel.input.emailPublisher.send(email)
             }).store(in: &viewModel.cancellableSet)
         
         customView.passwordField.textPublisher
-            .sink(receiveValue: { password  in
-                self.viewModel.input.passowrdPublisher.send(password)
+            .sink(receiveValue: { [weak self] password  in
+                self?.viewModel.input.passowrdPublisher.send(password)
             }).store(in: &viewModel.cancellableSet )
             
         customView.actionButton.tapPublisher
-            .sink(receiveValue: {
-                self.viewModel.login()
+            .sink(receiveValue: { [weak self] in
+                self?.viewModel.login()
             })
             .store(in: &viewModel.cancellableSet)
         

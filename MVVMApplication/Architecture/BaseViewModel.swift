@@ -10,7 +10,7 @@ import Combine
 protocol Input {}
 protocol Output {}
 
-protocol BaseViewModelType {
+protocol BaseViewModelType: AnyObject {
     var cancellableSet: Set<AnyCancellable>  { get set }
 }
 

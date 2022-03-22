@@ -17,8 +17,8 @@ final class FirstViewController: BaseViewController<FirstViewModelType, FirstVie
     
     override func bindViewModel() {
         customView.actionButton.tapPublisher
-            .sink(receiveValue:  {
-                self.viewModel.logOut()
+            .sink(receiveValue: { [weak self] in
+                self?.viewModel.logOut()
             }).store(in: &viewModel.cancellableSet)
     
     }

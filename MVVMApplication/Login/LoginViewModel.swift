@@ -54,20 +54,20 @@ final class LoginViewModel: BaseViewModel, LoginViewModelType {
     func login() {
         let email = emailSubject.value ?? ""
         let passowrd = passowrdSubject.value ?? ""
-//        if !email.isEmailValid {
-//            failureSubject.send("Please input valid email")
-//            return
-//        }
-//
-//        if !passowrd.isPasswordValid {
-//            failureSubject.send("Password field must have 1 lowercase, 1 uppercase, 1 number, 1 special character and be at least 8 characters.")
-//            return
-//        }
+        if !email.isEmailValid {
+            failureSubject.send("Please input valid email")
+            return
+        }
+
+        if !passowrd.isPasswordValid {
+            failureSubject.send("Password field must have 1 lowercase, 1 uppercase, 1 number, 1 special character and be at least 8 characters.")
+            return
+        }
         
         service.login(email: email, password: passowrd)
-            .sink(receiveValue: { _ in
+            .sink(receiveValue: { [weak self] _ in
                 print("The user logged in successfully.")
-                self.loginSuccessSubject.send(())
+                self?.loginSuccessSubject.send(())
             }).store(in: &cancellableSet)
     }
     
