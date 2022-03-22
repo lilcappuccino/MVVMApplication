@@ -27,6 +27,15 @@
 		856D6C7E27E9F23E00600676 /* ViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D6C7D27E9F23E00600676 /* ViewController+.swift */; };
 		856D6C8027E9F36800600676 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D6C7F27E9F36800600676 /* UserService.swift */; };
 		856D6C8327E9F40E00600676 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D6C8227E9F40E00600676 /* Defaults.swift */; };
+		856D6C9227EA067400600676 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D6C9127EA067400600676 /* MainCoordinator.swift */; };
+		856D6C9427EA16A000600676 /* SecondCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D6C9327EA16A000600676 /* SecondCoordinator.swift */; };
+		856D6C9627EA16B000600676 /* FirstViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D6C9527EA16B000600676 /* FirstViewCoordinator.swift */; };
+		856D6C9827EA2F5800600676 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D6C9727EA2F5800600676 /* FirstView.swift */; };
+		856D6C9A27EA2F6000600676 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D6C9927EA2F6000600676 /* FirstViewModel.swift */; };
+		856D6C9C27EA2F6900600676 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D6C9B27EA2F6900600676 /* FirstViewController.swift */; };
+		856D6C9E27EA327800600676 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D6C9D27EA327800600676 /* SecondViewModel.swift */; };
+		856D6CA027EA328200600676 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D6C9F27EA328200600676 /* SecondViewController.swift */; };
+		856D6CA227EA329300600676 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D6CA127EA329300600676 /* SecondView.swift */; };
 		8579C76327E7B948002BEFA5 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8579C76227E7B948002BEFA5 /* LoginCoordinator.swift */; };
 		8579C76527E7B954002BEFA5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8579C76427E7B954002BEFA5 /* LoginView.swift */; };
 		8579C76727E7B962002BEFA5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8579C76627E7B962002BEFA5 /* LoginViewModel.swift */; };
@@ -80,6 +89,15 @@
 		856D6C7D27E9F23E00600676 /* ViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+.swift"; sourceTree = "<group>"; };
 		856D6C7F27E9F36800600676 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		856D6C8227E9F40E00600676 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		856D6C9127EA067400600676 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		856D6C9327EA16A000600676 /* SecondCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCoordinator.swift; sourceTree = "<group>"; };
+		856D6C9527EA16B000600676 /* FirstViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewCoordinator.swift; sourceTree = "<group>"; };
+		856D6C9727EA2F5800600676 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		856D6C9927EA2F6000600676 /* FirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
+		856D6C9B27EA2F6900600676 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		856D6C9D27EA327800600676 /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
+		856D6C9F27EA328200600676 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		856D6CA127EA329300600676 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		8579C76227E7B948002BEFA5 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		8579C76427E7B954002BEFA5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8579C76627E7B962002BEFA5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -158,7 +176,6 @@
 				85457A5927E7B6D7002F08F4 /* LaunchScreen.storyboard */,
 				85457A5C27E7B6D7002F08F4 /* Info.plist */,
 				8579C76A27E7C695002BEFA5 /* AppCoordinator.swift */,
-				856D6C7B27E9EC2100600676 /* String+Validation.swift */,
 			);
 			path = MVVMApplication;
 			sourceTree = "<group>";
@@ -202,6 +219,28 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		856D6C8F27EA064100600676 /* FirstTab */ = {
+			isa = PBXGroup;
+			children = (
+				856D6C9527EA16B000600676 /* FirstViewCoordinator.swift */,
+				856D6C9727EA2F5800600676 /* FirstView.swift */,
+				856D6C9927EA2F6000600676 /* FirstViewModel.swift */,
+				856D6C9B27EA2F6900600676 /* FirstViewController.swift */,
+			);
+			path = FirstTab;
+			sourceTree = "<group>";
+		};
+		856D6C9027EA064F00600676 /* SecondTap */ = {
+			isa = PBXGroup;
+			children = (
+				856D6C9327EA16A000600676 /* SecondCoordinator.swift */,
+				856D6CA127EA329300600676 /* SecondView.swift */,
+				856D6C9D27EA327800600676 /* SecondViewModel.swift */,
+				856D6C9F27EA328200600676 /* SecondViewController.swift */,
+			);
+			path = SecondTap;
+			sourceTree = "<group>";
+		};
 		8579C75F27E7B908002BEFA5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +255,9 @@
 		8579C76027E7B913002BEFA5 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				856D6C9127EA067400600676 /* MainCoordinator.swift */,
+				856D6C9027EA064F00600676 /* SecondTap */,
+				856D6C8F27EA064100600676 /* FirstTab */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -224,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				8579C76D27E7CBBD002BEFA5 /* Dimension.swift */,
+				856D6C7B27E9EC2100600676 /* String+Validation.swift */,
 				856D6C7D27E9F23E00600676 /* ViewController+.swift */,
 			);
 			path = Base;
@@ -491,10 +534,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				85457A8A27E7B7E4002F08F4 /* BaseModel.swift in Sources */,
+				856D6C9227EA067400600676 /* MainCoordinator.swift in Sources */,
 				8579C76727E7B962002BEFA5 /* LoginViewModel.swift in Sources */,
 				856D6C8027E9F36800600676 /* UserService.swift in Sources */,
 				85457A5327E7B6D6002F08F4 /* ViewController.swift in Sources */,
 				8579C76327E7B948002BEFA5 /* LoginCoordinator.swift in Sources */,
+				856D6C9E27EA327800600676 /* SecondViewModel.swift in Sources */,
 				85457A8627E7B7E4002F08F4 /* BaseViewModel.swift in Sources */,
 				85457A8527E7B7E4002F08F4 /* BaseViewController.swift in Sources */,
 				8579C76B27E7C695002BEFA5 /* AppCoordinator.swift in Sources */,
@@ -502,10 +547,17 @@
 				8579C76E27E7CBBD002BEFA5 /* Dimension.swift in Sources */,
 				85457A4F27E7B6D6002F08F4 /* AppDelegate.swift in Sources */,
 				85457A5127E7B6D6002F08F4 /* SceneDelegate.swift in Sources */,
+				856D6CA227EA329300600676 /* SecondView.swift in Sources */,
 				856D6C7E27E9F23E00600676 /* ViewController+.swift in Sources */,
+				856D6C9627EA16B000600676 /* FirstViewCoordinator.swift in Sources */,
 				856D6C8327E9F40E00600676 /* Defaults.swift in Sources */,
 				8579C76527E7B954002BEFA5 /* LoginView.swift in Sources */,
 				85457A8827E7B7E4002F08F4 /* Coordinator.swift in Sources */,
+				856D6C9827EA2F5800600676 /* FirstView.swift in Sources */,
+				856D6C9A27EA2F6000600676 /* FirstViewModel.swift in Sources */,
+				856D6CA027EA328200600676 /* SecondViewController.swift in Sources */,
+				856D6C9C27EA2F6900600676 /* FirstViewController.swift in Sources */,
+				856D6C9427EA16A000600676 /* SecondCoordinator.swift in Sources */,
 				8579C76927E7B972002BEFA5 /* LoginViewController.swift in Sources */,
 				85457A8927E7B7E4002F08F4 /* BaseCoordinator.swift in Sources */,
 				856D6C7C27E9EC2100600676 /* String+Validation.swift in Sources */,
