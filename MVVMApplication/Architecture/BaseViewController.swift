@@ -26,4 +26,12 @@ public class BaseViewController<BaseViewModelType, BaseView> : UIViewController 
     override public func loadView() {
         view = customView
     }
+    
+    public override func viewDidLoad() {
+        bindViewModel()
+    }
+    
+    func bindViewModel() {
+        
+    }
 }

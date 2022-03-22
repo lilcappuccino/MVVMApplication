@@ -17,7 +17,7 @@ final class LoginCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        let viewModel = LoginViewModel()
+        let viewModel = LoginViewModel(userService: UserServiceImpl())
         let vc = LoginViewController(viewModel: viewModel, customView: LoginView())
         navigationController.viewControllers = [vc]
         window.rootViewController = navigationController

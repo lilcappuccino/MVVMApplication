@@ -8,14 +8,15 @@
 import Foundation
 import UIKit
 import SnapKit
+import CombineCocoa
 
 final class LoginView: BaseView {
     
     private let titleLabel = UILabel()
-    private let emailField = UITextField()
-    private let passwordField = UITextField()
-    private let actionButton = UIButton()
     private let stackView = UIStackView()
+    let emailField = UITextField()
+    let passwordField = UITextField()
+    let actionButton = UIButton()
     
     
     override func makeUI() {
@@ -30,7 +31,7 @@ final class LoginView: BaseView {
     private func makeStackUI() {
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        stackView.spacing = Dimension.bigTopMargin
+        stackView.spacing = Dimension.biggerMaring
         
         addSubview(stackView)
         stackView.snp.makeConstraints { make in

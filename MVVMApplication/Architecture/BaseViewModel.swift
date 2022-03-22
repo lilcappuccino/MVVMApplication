@@ -11,7 +11,7 @@ protocol Input {}
 protocol Output {}
 
 protocol BaseViewModelType {
-    var cancellableSet: Set<AnyCancellable>  { get }
+    var cancellableSet: Set<AnyCancellable>  { get set }
 }
 
 public class BaseViewModel: NSObject, ObservableObject {
