@@ -25,10 +25,6 @@ final class SecondCoordinator: BaseCoordinator, CoordinatorLifeCycle {
     }
     
     
-    func hold(coordinator: Coordinator) {
-        
-    }
-    
     func free(coordinator: Coordinator) {
         
     }

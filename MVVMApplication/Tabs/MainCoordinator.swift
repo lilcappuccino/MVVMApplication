@@ -18,8 +18,8 @@ enum Tabs: Int {
     }
 }
 
-final class MainCoordinator: BaseCoordinator {
-    
+final class MainCoordinator: BaseCoordinator, CoordinatorLifeCycle {
+  
     private let tabbar: UITabBarController
     private var firstTab: FirstViewCoordinator!
     private var secondTab: SecondCoordinator!
@@ -45,6 +45,7 @@ final class MainCoordinator: BaseCoordinator {
     
     private func initFirstTabCoordintator() -> FirstViewCoordinator {
         let coordinator =  FirstViewCoordinator(service: service)
+        coordinator.delegate = self
         start(coordinator: coordinator)
         controlelrs.append(coordinator.parentController)
         tabbar.tabBarItem = UITabBarItem(title: "First", image: nil, tag: 0)
@@ -53,8 +54,15 @@ final class MainCoordinator: BaseCoordinator {
     
     private func initSecondTabCoordinator() -> SecondCoordinator {
         let coordinator =  SecondCoordinator(service: service)
+        coordinator.delegate = self
         start(coordinator: coordinator)
         controlelrs.append(coordinator.parentController)
         return coordinator
     }
+    
+    func free(coordinator: Coordinator) {
+        self.parentCoordinator?.didFinish(coordinator: self);
+        self.delegate?.free(coordinator: self);
+    }
+    
 }

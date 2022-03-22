@@ -32,13 +32,13 @@ final class LoginViewModel: BaseViewModel, LoginViewModelType {
     var output: LoginOutput
     
     // MARK: - Input
-    let emailSubject = CurrentValueSubject<String?, Never>("")
-    let passowrdSubject = CurrentValueSubject<String?, Never>("")
+    private let emailSubject = CurrentValueSubject<String?, Never>("")
+    private let passowrdSubject = CurrentValueSubject<String?, Never>("")
     
     // MARK: - Output
-    let loginSuccessSubject = PassthroughSubject<Void, Never>()
-    let failureSubject = PassthroughSubject<String, Never>()
-    let service: UserService
+    private let loginSuccessSubject = PassthroughSubject<Void, Never>()
+    private let failureSubject = PassthroughSubject<String, Never>()
+    private let service: UserService
     
     init(userService: UserService) {
         self.input = LoginInput(emailPublisher: emailSubject,
@@ -54,20 +54,24 @@ final class LoginViewModel: BaseViewModel, LoginViewModelType {
     func login() {
         let email = emailSubject.value ?? ""
         let passowrd = passowrdSubject.value ?? ""
-        if !email.isEmailValid {
-            failureSubject.send("Please input valid email")
-            return
-        }
-        
-        if !passowrd.isPasswordValid {
-            failureSubject.send("Password field must have 1 lowercase, 1 uppercase, 1 number, 1 special character and be at least 8 characters.")
-            return
-        }
+//        if !email.isEmailValid {
+//            failureSubject.send("Please input valid email")
+//            return
+//        }
+//
+//        if !passowrd.isPasswordValid {
+//            failureSubject.send("Password field must have 1 lowercase, 1 uppercase, 1 number, 1 special character and be at least 8 characters.")
+//            return
+//        }
         
         service.login(email: email, password: passowrd)
             .sink(receiveValue: { _ in
                 print("The user logged in successfully.")
                 self.loginSuccessSubject.send(())
             }).store(in: &cancellableSet)
+    }
+    
+    deinit {
+        print(String(describing: self))
     }
 }

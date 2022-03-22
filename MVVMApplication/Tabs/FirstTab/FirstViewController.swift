@@ -9,14 +9,21 @@ import Foundation
 
 final class FirstViewController: BaseViewController<FirstViewModelType, FirstView> {
     
+    weak var coordinator: FirstViewCoordinator?
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func bindViewModel() {
-        
-      
+        customView.actionButton.tapPublisher
+            .sink(receiveValue:  {
+                self.viewModel.logOut()
+            }).store(in: &viewModel.cancellableSet)
+    
     }
     
+    deinit {
+        print(String(describing: self))
+    }
 }

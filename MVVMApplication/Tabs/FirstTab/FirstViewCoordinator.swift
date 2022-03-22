@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class FirstViewCoordinator: BaseCoordinator, CoordinatorLifeCycle {
+final class FirstViewCoordinator: BaseCoordinator {
     private let service: UserService
     private(set) var parentController: UIViewController!
     
@@ -21,15 +21,18 @@ final class FirstViewCoordinator: BaseCoordinator, CoordinatorLifeCycle {
         let vc = FirstViewController(viewModel: viewModel, customView: FirstView())
         vc.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
         parentController = vc
-    }
-    
-    func hold(coordinator: Coordinator) {
         
+        viewModel.output.logoutSuccess
+            .sink(receiveValue: { [weak self] _ in self?.openLoginScreen() })
+            .store(in: &viewModel.cancellableSet)
     }
     
-    func free(coordinator: Coordinator) {
-        
+    private func openLoginScreen() {
+        self.parentCoordinator?.didFinish(coordinator: self)
+        self.delegate?.free(coordinator: self);
     }
     
-    
+    deinit {
+        print(String(describing: self))
+    }
 }

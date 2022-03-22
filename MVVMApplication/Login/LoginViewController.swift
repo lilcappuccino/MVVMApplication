@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class LoginViewController: BaseViewController<LoginViewModelType, LoginView> {
-    
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +36,14 @@ final class LoginViewController: BaseViewController<LoginViewModelType, LoginVie
         
         // output
         viewModel.output.failure
-            .sink(receiveValue:  { message in
-                self.showAlert(title: "Error", message: message)
+            .sink(receiveValue:  { [weak self] message in
+                self?.showAlert(title: "Error", message: message)
             })
             .store(in: &viewModel.cancellableSet)
-        
-        viewModel.output.loginSuccess
-            .sink(receiveValue: {
-                
-            }).store(in: &viewModel.cancellableSet)
+    }
+    
+    deinit {
+        print(String(describing: self))
     }
     
 }

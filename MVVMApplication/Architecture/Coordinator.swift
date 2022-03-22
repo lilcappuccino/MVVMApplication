@@ -25,7 +25,6 @@ protocol Coordinator: AnyObject {
 }
 
 protocol CoordinatorLifeCycle: AnyObject {
-    func hold(coordinator: Coordinator)
     func free(coordinator: Coordinator)
 }
 

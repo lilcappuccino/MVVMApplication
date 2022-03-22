@@ -10,11 +10,11 @@ import UIKit
 
 class BaseCoordinator: Coordinator {
     
-    var parentCoordinator: Coordinator?
     var childCoordinators = [Coordinator]();
     var navigationController = UINavigationController()
     
-    var delegate: CoordinatorLifeCycle?
+    weak var delegate: CoordinatorLifeCycle?
+    weak var parentCoordinator: Coordinator?
     
     func start() {
         fatalError("\(#function) should be implemented")

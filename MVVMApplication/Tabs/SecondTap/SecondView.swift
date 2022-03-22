@@ -11,7 +11,7 @@ import SnapKit
 import CombineCocoa
 
 final class SecondView: BaseView {
-
+    
     override func makeUI() {
         backgroundColor = .lightGray
     }

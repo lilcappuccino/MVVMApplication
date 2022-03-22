@@ -16,7 +16,10 @@ final class SecondViewController: BaseViewController<SecondViewModelType, Second
     
     override func bindViewModel() {
         
-      
+    }
+    
+    deinit {
+        print(String(describing: self))
     }
     
 }

@@ -33,4 +33,8 @@ final class SecondViewModel: BaseViewModel, SecondViewModelType {
         super.init()
     }
     
+    deinit {
+        print(String(describing: self))
+    }
+    
 }

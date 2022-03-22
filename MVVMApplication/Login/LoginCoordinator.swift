@@ -21,6 +21,11 @@ final class LoginCoordinator: BaseCoordinator {
     override func start() {
         let viewModel = LoginViewModel(userService: service)
         let vc = LoginViewController(viewModel: viewModel, customView: LoginView())
+        viewModel.output.loginSuccess
+            .sink(receiveValue: { [weak self] _ in
+                self?.openMainTabbar()
+            }).store(in: &viewModel.cancellableSet)
+        
         navigationController.viewControllers = [vc]
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
